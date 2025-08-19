@@ -2,8 +2,8 @@ import qrcode
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.constants import ERROR_CORRECT_H
 
-data_to_encode = "https://www.whitney.rip"
-image_path = "data/camera.jpeg"
+data_to_encode = "https://linktr.ee/jakerunyanphotography"
+image_path = "data/photo.jpeg"
 
 qr = qrcode.QRCode(
     error_correction=ERROR_CORRECT_H,
