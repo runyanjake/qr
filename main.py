@@ -1,7 +1,7 @@
 import qrcode
 from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.moduledrawers import GappedSquareModuleDrawer
-from qrcode.constants import ERROR_CORRECT_H
+from qrcode.image.styles.moduledrawers import SquareModuleDrawer, GappedSquareModuleDrawer, CircleModuleDrawer, RoundedModuleDrawer, VerticalBarsDrawer, HorizontalBarsDrawer
+from qrcode.constants import ERROR_CORRECT_H, ERROR_CORRECT_Q, ERROR_CORRECT_M, ERROR_CORRECT_L
 
 data_to_encode = "https://linktr.ee/jakerunyanphotography"
 image_path = "input/photo.jpeg"
@@ -17,11 +17,11 @@ qr.make(fit=True)
 
 img = qr.make_image(
     image_factory=StyledPilImage,
-    module_drawer=GappedSquareModuleDrawer(),
+    module_drawer=SquareModuleDrawer(),
     embeded_image_path=image_path
 )
 
-output_filename = "output/output_qr.svg"
+output_filename = "output/output.png"
 img.save(output_filename)
 
 print(f"Successfully created QR code '{output_filename}' with '{image_path}' embedded.")
